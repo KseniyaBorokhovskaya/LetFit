@@ -15,6 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+//        let defaults = UserDefaults.standard
+//        if defaults.object(forKey: "isFirstTime") == nil {
+//            defaults.set("No", forKey:"isFirstTime")
+//            defaults.synchronize()
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil) //Write your storyboard name
+//            let viewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+//            self.window?.rootViewController = viewController
+//            self.window?.makeKeyAndVisible()
+//        }
+//        PreloadData.getJSONActivitiesData()
         // Override point for customization after application launch.
         return true
     }

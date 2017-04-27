@@ -17,7 +17,7 @@
                BlueprintIdentifier = "A4062B6E1EABEED2008E2C77"
                BuildableName = "FitApp.app"
                BlueprintName = "FitApp"
-               ReferencedContainer = "container:FitApp.xcodeproj">
+               ReferencedContainer = "container:LetFit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
             BlueprintIdentifier = "A4062B6E1EABEED2008E2C77"
             BuildableName = "FitApp.app"
             BlueprintName = "FitApp"
-            ReferencedContainer = "container:FitApp.xcodeproj">
+            ReferencedContainer = "container:LetFit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -58,9 +58,16 @@
             BlueprintIdentifier = "A4062B6E1EABEED2008E2C77"
             BuildableName = "FitApp.app"
             BlueprintName = "FitApp"
-            ReferencedContainer = "container:FitApp.xcodeproj">
+            ReferencedContainer = "container:LetFit.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = ""
+            value = ""
+            isEnabled = "NO">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -77,7 +84,7 @@
             BlueprintIdentifier = "A4062B6E1EABEED2008E2C77"
             BuildableName = "FitApp.app"
             BlueprintName = "FitApp"
-            ReferencedContainer = "container:FitApp.xcodeproj">
+            ReferencedContainer = "container:LetFit.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

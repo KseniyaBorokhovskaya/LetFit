@@ -1,0 +1,26 @@
+{
+    "Activities" :
+    {
+        "1" :      {
+                   "nameOfActivity" : "Jogging 6 km/h",
+                   "calories" : 300
+                   },
+        "2" :      {
+                   "nameOfActivity" : "Cycling 8 km/h",
+                   "calories" : 480
+                   },
+        "3" :      {
+                   "nameOfActivity" : "Cycling 10 km/h",
+                   "calories" : 600
+                   },
+        "4" :      {
+                   "nameOfActivity" : "Cycling 16 km/h",
+                   "calories" : 860
+                   },
+        "5" :      {
+                   "nameOfActivity" : "Swimming",
+                   "calories" : 476
+                   }
+    }
+}
+
