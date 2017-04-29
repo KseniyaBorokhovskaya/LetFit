@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UISearchBar.appearance().barTintColor = UIColor.white
@@ -28,9 +28,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = viewController
             self.window?.makeKeyAndVisible()
         }
+        let today: String? = String(describing: Date())
+        if let realm = try? Realm(),
+            let _ = realm.object(ofType: DailyData.self, forPrimaryKey: today as AnyObject) {
 
+        } else {
+            let realm = try! Realm()
+            let todayData = DailyData()
+            try! realm.write
+            {
+                    realm.add(todayData)
+            }
+        }
         
-        // Override point for customization after application launch.
         return true
     }
 

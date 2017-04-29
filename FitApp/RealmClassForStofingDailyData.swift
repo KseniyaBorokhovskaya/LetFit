@@ -12,11 +12,19 @@ import RealmSwift
 
 class DailyData: Object {
     
-    dynamic var DailyDataId = NSUUID().uuidString
+    dynamic var DailyDataId = String(describing: Date())
     
-    var Food : List<Food>? = nil
-    var Activitiy : List<Activity>? = nil
+    let food = List<Food>()
+    let foodCalories = Array<Int>()
+    let activity = List<Activity>()
+    let activityCalories = Array<Int>()
     
+    
+    dynamic var eatenCalories = 0
+    dynamic var burnedCalories = 0
+    dynamic var leftCarbs = 0.0
+    dynamic var leftFat = 0.0
+    dynamic var leftProtein = 0.0
     dynamic var date = Date()
     
     override class func primaryKey() -> String?

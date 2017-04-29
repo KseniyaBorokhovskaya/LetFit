@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SelectedActivityTableViewController: UITableViewController, UITextFieldDelegate{
 
@@ -19,7 +20,13 @@ class SelectedActivityTableViewController: UITableViewController, UITextFieldDel
     
     @IBAction func AddActivityToDailyBase(_ sender: UIButton)
     {
-        
+        let today: String? = String(describing: Date())
+        if let realm = try? Realm(),
+        let todayData = realm.object(ofType: DailyData.self, forPrimaryKey: today as AnyObject) {
+            try! realm.write {
+                todayData.activity.append(detailActivity!)
+            }
+        }
     }
     var detailActivity: Activity? {
         didSet {
