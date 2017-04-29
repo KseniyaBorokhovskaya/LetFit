@@ -17,7 +17,13 @@
 		A408AFFC1EB1FF13001D5130 /* SelectedFoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A408AFFB1EB1FF13001D5130 /* SelectedFoodTableViewController.swift */; };
 		A408AFFF1EB211BF001D5130 /* LoadJSONFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = A408AFFE1EB211BF001D5130 /* LoadJSONFood.swift */; };
 		A408B0031EB23CF9001D5130 /* RealmClassForStofingDailyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A408B0021EB23CF9001D5130 /* RealmClassForStofingDailyData.swift */; };
+		A408B0051EB2683F001D5130 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A408B0041EB2683F001D5130 /* StartScreenViewController.swift */; };
+		A408B0071EB27238001D5130 /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A408B0061EB27238001D5130 /* FoodTableViewCell.swift */; };
+		A40AD29D1EB47E48007F23A7 /* UserProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40AD29C1EB47E48007F23A7 /* UserProfileTableViewController.swift */; };
 		A40DF26A1EB1EEE400754585 /* AddFoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40DF2691EB1EEE400754585 /* AddFoodTableViewController.swift */; };
+		A416F1571EB36ECB00F784C0 /* UserProfileClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A416F1561EB36ECB00F784C0 /* UserProfileClass.swift */; };
+		A416F15B1EB39E8300F784C0 /* StartProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A416F15A1EB39E8300F784C0 /* StartProfileTableViewController.swift */; };
+		A416F15E1EB3A13B00F784C0 /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A416F15D1EB3A13B00F784C0 /* ResultsTableViewController.swift */; };
 		A425E91C1EACC0CB0067DAE4 /* CreateActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A425E91B1EACC0CB0067DAE4 /* CreateActivityTableViewController.swift */; };
 		A425E91E1EACC9D30067DAE4 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A425E91D1EACC9D30067DAE4 /* ActivityTableViewCell.swift */; };
 		A425E9221EACE23C0067DAE4 /* LoadJSONActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A425E9211EACE23C0067DAE4 /* LoadJSONActivities.swift */; };
@@ -51,7 +57,13 @@
 		A408AFFB1EB1FF13001D5130 /* SelectedFoodTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedFoodTableViewController.swift; sourceTree = "<group>"; };
 		A408AFFE1EB211BF001D5130 /* LoadJSONFood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadJSONFood.swift; sourceTree = "<group>"; };
 		A408B0021EB23CF9001D5130 /* RealmClassForStofingDailyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmClassForStofingDailyData.swift; sourceTree = "<group>"; };
+		A408B0041EB2683F001D5130 /* StartScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
+		A408B0061EB27238001D5130 /* FoodTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
+		A40AD29C1EB47E48007F23A7 /* UserProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewController.swift; sourceTree = "<group>"; };
 		A40DF2691EB1EEE400754585 /* AddFoodTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFoodTableViewController.swift; sourceTree = "<group>"; };
+		A416F1561EB36ECB00F784C0 /* UserProfileClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileClass.swift; sourceTree = "<group>"; };
+		A416F15A1EB39E8300F784C0 /* StartProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartProfileTableViewController.swift; sourceTree = "<group>"; };
+		A416F15D1EB3A13B00F784C0 /* ResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
 		A425E91B1EACC0CB0067DAE4 /* CreateActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateActivityTableViewController.swift; sourceTree = "<group>"; };
 		A425E91D1EACC9D30067DAE4 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		A425E9211EACE23C0067DAE4 /* LoadJSONActivities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadJSONActivities.swift; sourceTree = "<group>"; };
@@ -109,6 +121,7 @@
 				A4062B721EABEED3008E2C77 /* AppDelegate.swift */,
 				A44CFF5A1EB0EE5E000E8FCA /* ViewController.swift */,
 				A4062B761EABEED3008E2C77 /* Main.storyboard */,
+				A416F15C1EB39EAA00F784C0 /* User */,
 				A408AFFD1EB20210001D5130 /* Food */,
 				A4F2B8191EACF69E0018D852 /* Activity */,
 				A44CFF6C1EB0EEC4000E8FCA /* Calendar */,
@@ -121,13 +134,26 @@
 			isa = PBXGroup;
 			children = (
 				A408AFFB1EB1FF13001D5130 /* SelectedFoodTableViewController.swift */,
-				A40DF2691EB1EEE400754585 /* AddFoodTableViewController.swift */,
 				A408AFF91EB1FEA6001D5130 /* CreateMealTableViewController.swift */,
+				A40DF2691EB1EEE400754585 /* AddFoodTableViewController.swift */,
+				A408B0061EB27238001D5130 /* FoodTableViewCell.swift */,
 				A408AFFE1EB211BF001D5130 /* LoadJSONFood.swift */,
 				A44CFF6D1EB14970000E8FCA /* FoodClass.swift */,
 				A44CFF6F1EB1498E000E8FCA /* Food.json */,
 			);
 			name = Food;
+			sourceTree = "<group>";
+		};
+		A416F15C1EB39EAA00F784C0 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				A416F15A1EB39E8300F784C0 /* StartProfileTableViewController.swift */,
+				A40AD29C1EB47E48007F23A7 /* UserProfileTableViewController.swift */,
+				A416F15D1EB3A13B00F784C0 /* ResultsTableViewController.swift */,
+				A416F1561EB36ECB00F784C0 /* UserProfileClass.swift */,
+				A408B0041EB2683F001D5130 /* StartScreenViewController.swift */,
+			);
+			name = User;
 			sourceTree = "<group>";
 		};
 		A44CFF6C1EB0EEC4000E8FCA /* Calendar */ = {
@@ -158,9 +184,9 @@
 			isa = PBXGroup;
 			children = (
 				A408AFF71EB1FE6C001D5130 /* SelectedActivityTableViewController.swift */,
+				A425E91B1EACC0CB0067DAE4 /* CreateActivityTableViewController.swift */,
 				A48303691EABF429004A11E3 /* AddActivityTableViewController.swift */,
 				A425E91D1EACC9D30067DAE4 /* ActivityTableViewCell.swift */,
-				A425E91B1EACC0CB0067DAE4 /* CreateActivityTableViewController.swift */,
 				A425E9211EACE23C0067DAE4 /* LoadJSONActivities.swift */,
 				A48303601EABF280004A11E3 /* ActivitiesClass.swift */,
 				A44CFF211EAFB4AD000E8FCA /* Try.json */,
@@ -314,25 +340,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A416F15E1EB3A13B00F784C0 /* ResultsTableViewController.swift in Sources */,
 				A4062B731EABEED3008E2C77 /* AppDelegate.swift in Sources */,
 				A483036A1EABF429004A11E3 /* AddActivityTableViewController.swift in Sources */,
+				A40AD29D1EB47E48007F23A7 /* UserProfileTableViewController.swift in Sources */,
 				A425E9221EACE23C0067DAE4 /* LoadJSONActivities.swift in Sources */,
 				A44CFF631EB0EE5E000E8FCA /* PopupContainer.swift in Sources */,
 				A40DF26A1EB1EEE400754585 /* AddFoodTableViewController.swift in Sources */,
 				A44CFF6E1EB14970000E8FCA /* FoodClass.swift in Sources */,
 				A44CFF661EB0EE5E000E8FCA /* CalendarPopUp.swift in Sources */,
 				A44CFF641EB0EE5E000E8FCA /* ViewController.swift in Sources */,
+				A416F15B1EB39E8300F784C0 /* StartProfileTableViewController.swift in Sources */,
 				A408AFFA1EB1FEA6001D5130 /* CreateMealTableViewController.swift in Sources */,
 				A408AFF81EB1FE6C001D5130 /* SelectedActivityTableViewController.swift in Sources */,
 				A408B0031EB23CF9001D5130 /* RealmClassForStofingDailyData.swift in Sources */,
+				A416F1571EB36ECB00F784C0 /* UserProfileClass.swift in Sources */,
 				A408AFFC1EB1FF13001D5130 /* SelectedFoodTableViewController.swift in Sources */,
 				A425E91E1EACC9D30067DAE4 /* ActivityTableViewCell.swift in Sources */,
 				A44CFF691EB0EE5E000E8FCA /* CellView.swift in Sources */,
 				A425E91C1EACC0CB0067DAE4 /* CreateActivityTableViewController.swift in Sources */,
 				A48303611EABF280004A11E3 /* ActivitiesClass.swift in Sources */,
 				A44CFF6A1EB0EE5E000E8FCA /* AnimationClass.swift in Sources */,
+				A408B0071EB27238001D5130 /* FoodTableViewCell.swift in Sources */,
 				A44CFF6B1EB0EE5E000E8FCA /* Extensions.swift in Sources */,
 				A408AFFF1EB211BF001D5130 /* LoadJSONFood.swift in Sources */,
+				A408B0051EB2683F001D5130 /* StartScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

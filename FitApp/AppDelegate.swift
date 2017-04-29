@@ -15,16 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-//        let defaults = UserDefaults.standard
-//        if defaults.object(forKey: "isFirstTime") == nil {
-//            defaults.set("No", forKey:"isFirstTime")
-//            defaults.synchronize()
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil) //Write your storyboard name
-//            let viewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-//            self.window?.rootViewController = viewController
-//            self.window?.makeKeyAndVisible()
-//        }
-//        PreloadData.getJSONActivitiesData()
+        UISearchBar.appearance().barTintColor = UIColor.white
+        UISearchBar.appearance().tintColor = UIColor.lightGray
+        let defaults = UserDefaults.standard
+        if defaults.object(forKey: "isFirstTime") == nil {
+            PreloadData.getJSONActivitiesData()
+            PreloadFoodData.getJSONAFoodData()
+            defaults.set("No", forKey:"isFirstTime")
+            defaults.synchronize()
+            let storyboard = UIStoryboard(name: "Main", bundle: nil) //Write your storyboard name
+            let viewController = storyboard.instantiateViewController(withIdentifier: "StartScreenViewController")
+            self.window?.rootViewController = viewController
+            self.window?.makeKeyAndVisible()
+        }
+
+        
         // Override point for customization after application launch.
         return true
     }

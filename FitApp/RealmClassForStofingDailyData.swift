@@ -14,8 +14,8 @@ class DailyData: Object {
     
     dynamic var DailyDataId = NSUUID().uuidString
     
-    dynamic var Food : Food? = nil
-    dynamic var Activitiy : Activity? = nil
+    var Food : List<Food>? = nil
+    var Activitiy : List<Activity>? = nil
     
     dynamic var date = Date()
     

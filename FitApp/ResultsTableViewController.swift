@@ -1,64 +1,58 @@
 //
-//  SelectedActivityTableViewController.swift
+//  ResultsTableViewController.swift
 //  LetFit
 //
-//  Created by Kseniya Borokhovskaya on 4/27/17.
+//  Created by Kseniya Borokhovskaya on 4/28/17.
 //  Copyright © 2017 Kseniya Borokhovskaya. All rights reserved.
 //
 
 import UIKit
 
-class SelectedActivityTableViewController: UITableViewController, UITextFieldDelegate{
-
-    @IBOutlet weak var ActivityName: UILabel!
-    @IBOutlet weak var CaloriesPerHour: UILabel!
+class ResultsTableViewController: UITableViewController {
     
-    @IBOutlet weak var minutes: UITextField!
+    @IBOutlet weak var basalMetabolism: UILabel!
+    @IBOutlet weak var carbs: UILabel!
+    @IBOutlet weak var protein: UILabel!
+    @IBOutlet weak var fat: UILabel!
     
-    @IBOutlet weak var FinalCalories: UILabel!
-    
-    @IBAction func AddActivityToDailyBase(_ sender: UIButton)
-    {
-        
-    }
-    var detailActivity: Activity? {
+    var detailUser: User? {
         didSet {
             configureView()
         }
     }
     
     func configureView() {
-        if let detailActivity = detailActivity {
-            if let ActivityName = ActivityName, let CaloriesPerHour = CaloriesPerHour {
-                ActivityName.text = detailActivity.nameOfActivity
-                CaloriesPerHour.text = String(detailActivity.calories)
-                title = detailActivity.nameOfActivity
-            }
+        if let detailUser = detailUser {
+           if let basalMetabolism = basalMetabolism,
+               let carbs = carbs,
+                    let protein = protein,
+                        let fat = fat
+                {
+                basalMetabolism.text = String(detailUser.basalMetabolism)
+                carbs.text = String(detailUser.carbs)
+                protein.text = String(detailUser.protein)
+                fat.text = String(detailUser.fat)
+              }
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        minutes.delegate = self
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true;
-    }
-    
-    //textfield func for the touch on BG
-//    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-//        minutes.resignFirstResponder()
-//        self.view.endEditing(true)
-//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: - Table view data source
 
 
     /*

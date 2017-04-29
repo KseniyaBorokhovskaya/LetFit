@@ -1,64 +1,69 @@
 //
-//  SelectedActivityTableViewController.swift
+//  StartProfileTableViewController.swift
 //  LetFit
 //
-//  Created by Kseniya Borokhovskaya on 4/27/17.
+//  Created by Kseniya Borokhovskaya on 4/28/17.
 //  Copyright © 2017 Kseniya Borokhovskaya. All rights reserved.
 //
 
 import UIKit
+import RealmSwift
 
-class SelectedActivityTableViewController: UITableViewController, UITextFieldDelegate{
+class StartProfileTableViewController: UITableViewController {
+    
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var surname: UITextField!
+    @IBOutlet weak var sex: UITextField!
+    @IBOutlet weak var age: UITextField!
+    @IBOutlet weak var weight: UITextField!
+    @IBOutlet weak var hight: UITextField!
+    
+    var user: Results<User>!
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toResults" {
+            
+            let realm = try! Realm()
+            let user = User(name: name.text!,surname: surname.text!,sex: sex.text!, age: Int(age.text!)!, hight: Int(hight.text!)!, weight: Double(weight.text!)!)
+            user.setBasalMetabolismAgain()
+            user.setFat()
+            user.setCarbs()
+            user.setProtein()
+            try! realm.write {
+                realm.add(user)
+            }
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil) //Write your storyboard name
+            let viewController = storyboard.instantiateViewController(withIdentifier: "UserProfileTableViewController")
+            let profileController = viewController as! UserProfileTableViewController
 
-    @IBOutlet weak var ActivityName: UILabel!
-    @IBOutlet weak var CaloriesPerHour: UILabel!
-    
-    @IBOutlet weak var minutes: UITextField!
-    
-    @IBOutlet weak var FinalCalories: UILabel!
-    
-    @IBAction func AddActivityToDailyBase(_ sender: UIButton)
-    {
-        
-    }
-    var detailActivity: Activity? {
-        didSet {
-            configureView()
-        }
-    }
-    
-    func configureView() {
-        if let detailActivity = detailActivity {
-            if let ActivityName = ActivityName, let CaloriesPerHour = CaloriesPerHour {
-                ActivityName.text = detailActivity.nameOfActivity
-                CaloriesPerHour.text = String(detailActivity.calories)
-                title = detailActivity.nameOfActivity
+            
+            let controller = segue.destination as! ResultsTableViewController
+            
+            
+            controller.detailUser = user
+            profileController.detailUser = user
+            
             }
         }
-    }
-    
+
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureView()
-        minutes.delegate = self
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true;
-    }
-    
-    //textfield func for the touch on BG
-//    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-//        minutes.resignFirstResponder()
-//        self.view.endEditing(true)
-//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
+    // MARK: - Table view data source
 
 
     /*

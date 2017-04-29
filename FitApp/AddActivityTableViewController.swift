@@ -13,12 +13,23 @@ import SwiftyJSON
 class AddActivityTableViewController: UITableViewController {
     
     var activitiesFromBase: Results<Activity>!
+    //var filteredActivities: Results<Activity>!
+    
+    //let searchController = UISearchController(searchResultsController: nil)
     
 
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         let realm = try! Realm()
         activitiesFromBase = realm.objects(Activity.self)
-        //super.viewDidLoad()
+        
+        
+//        searchController.searchResultsUpdater = self
+//        searchController.dimsBackgroundDuringPresentation = false
+//        definesPresentationContext = true
+//        tableView.tableHeaderView = searchController.searchBar
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -32,7 +43,6 @@ class AddActivityTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    @IBOutlet weak var searchBar: UISearchBar!
 
 //    override func didReceiveMemoryWarning() {
 //        super.didReceiveMemoryWarning()
@@ -46,7 +56,6 @@ class AddActivityTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return activitiesFromBase.count
     }
 
@@ -54,23 +63,17 @@ class AddActivityTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let activity = activitiesFromBase[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityCell") as! ActivityTableViewCell
-        cell.textLabel!.text = activity.nameOfActivity
-       // cell.configureWithActivity(activity)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityCell") as! ActivityTableViewCell;
+        cell.configureWithActivity(activity)
         return cell
     }
     
 
-    
-    // Override to support conditional editing of the table view.
+
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
     
-
-    
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             try! activitiesFromBase.realm!.write {
@@ -79,9 +82,6 @@ class AddActivityTableViewController: UITableViewController {
             }
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
-//        else if editingStyle == .insert {
-//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-//        }    
     }
     
 
@@ -100,14 +100,30 @@ class AddActivityTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // MARK: - Segues
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "AddActivity" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let activity : Activity
+                activity = activitiesFromBase[indexPath.row]
+                let controller = segue.destination as! SelectedActivityTableViewController
+                controller.detailActivity = activity
+                controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+                controller.navigationItem.leftItemsSupplementBackButton = true
+            }
+        }
     }
-    */
+ 
 
 }
+
+//extension AddActivityTableViewController: UISearchResultsUpdating {
+//    @available(iOS 8.0, *)
+//    public func updateSearchResults(for searchController: UISearchController) {
+//        filterContentForSearchText(searchText: searchController.searchBar.text!)
+//    }
+//}

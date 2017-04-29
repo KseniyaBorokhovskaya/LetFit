@@ -5,35 +5,35 @@
             "nameOfFood" : "Apple",
             "calories" : 47,
             "fat" : 0.4,
-            "carbohydrates" : 9.8
+            "carbohydrates" : 9.8,
             "protein" : 0.4
         },
         "2" :      {
             "nameOfFood" : "Banana",
             "calories" : 105,
             "fat" : 0.4,
-            "carbohydrates" : 9.8
+            "carbohydrates" : 9.8,
             "protein" : 0.4
         },
         "3" :      {
             "nameOfFood" : "pinapple",
             "calories" : 55,
             "fat" : 0.4,
-            "carbohydrates" : 9.8
+            "carbohydrates" : 9.8,
             "protein" : 0.4
         },
         "4" :      {
             "nameOfFood" : "pasta",
             "calories" : 400,
             "fat" : 0.4,
-            "carbohydrates" : 9.8
+            "carbohydrates" : 9.8,
             "protein" : 0.4
         },
         "5" :      {
             "nameOfFood" : "pizza",
             "calories" : 500,
             "fat" : 0.4,
-            "carbohydrates" : 9.8
+            "carbohydrates" : 9.8,
             "protein" : 0.4
         }
     }
