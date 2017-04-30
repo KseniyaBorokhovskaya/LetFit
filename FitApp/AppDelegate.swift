@@ -28,7 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = viewController
             self.window?.makeKeyAndVisible()
         }
-        let today: String? = String(describing: Date())
+        let dateFormatter = setDateFormatter()
+        let currentDate = Date()
+        let today: String? = dateFormatter.string(from:currentDate as Date)
         if let realm = try? Realm(),
             let _ = realm.object(ofType: DailyData.self, forPrimaryKey: today as AnyObject) {
 

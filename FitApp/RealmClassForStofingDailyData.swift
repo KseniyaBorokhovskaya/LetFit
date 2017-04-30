@@ -10,14 +10,18 @@ import Foundation
 import RealmSwift
 
 
+let dateFormatter = setDateFormatter()
+
+class RealmInt: Object {
+    dynamic var intValue = 0
+}
+
 class DailyData: Object {
     
-    dynamic var DailyDataId = String(describing: Date())
-    
     let food = List<Food>()
-    let foodCalories = Array<Int>()
+    var foodCalories = List<RealmInt>()
     let activity = List<Activity>()
-    let activityCalories = Array<Int>()
+    var activityCalories = List<RealmInt>()
     
     
     dynamic var eatenCalories = 0
@@ -26,6 +30,8 @@ class DailyData: Object {
     dynamic var leftFat = 0.0
     dynamic var leftProtein = 0.0
     dynamic var date = Date()
+    
+    dynamic var DailyDataId = dateFormatter.string(from: Date() as Date)
     
     override class func primaryKey() -> String?
     {

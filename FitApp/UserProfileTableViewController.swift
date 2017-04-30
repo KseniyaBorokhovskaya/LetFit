@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class UserProfileTableViewController: UITableViewController {
     
@@ -28,6 +29,8 @@ class UserProfileTableViewController: UITableViewController {
     
     var firstLoad = true
     var editTextFieldToggle: Bool = false
+    
+    let dateFormatter = setDateFormatter()
     
     @IBAction func Edit(_ sender: UIButton) {
         editTextFieldToggle = !editTextFieldToggle
@@ -65,8 +68,44 @@ class UserProfileTableViewController: UITableViewController {
     var detailUser: User? {
         didSet {
             configureResultsView()
+            configureProfileView()
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if firstLoad == true
+        {
+            configureProfileView()
+        }
+        configureResultsView()
+        if let realm = try? Realm() {
+            let user = realm.objects(User.self)[0]
+            basalMetabolism.text = String(user.basalMetabolism)
+            name.text = String(user.name)
+            surname.text = String(user.surname)
+            sex.text = String(user.sex)
+            age.text = String(user.age)
+            hight.text = String(user.hight)
+            weight.text = String(user.weight)
+            carbs.text = String(user.carbs)
+            fat.text = String(user.fat)
+            protein.text = String(user.protein)
+        }
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+        
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    
     
     func configureResultsView() {
         if let detailUser = detailUser {
@@ -101,27 +140,7 @@ class UserProfileTableViewController: UITableViewController {
                 hight.text = String(detailUser.hight)
             }
         }
-        firstLoad = false
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if firstLoad == true
-        {
-            configureProfileView()
-        }
-        configureResultsView()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // firstLoad = false
     }
 
     // MARK: - Table view data source

@@ -38,6 +38,7 @@
 		A44CFF6B1EB0EE5E000E8FCA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44CFF621EB0EE5E000E8FCA /* Extensions.swift */; };
 		A44CFF6E1EB14970000E8FCA /* FoodClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44CFF6D1EB14970000E8FCA /* FoodClass.swift */; };
 		A44CFF701EB1498E000E8FCA /* Food.json in Resources */ = {isa = PBXBuildFile; fileRef = A44CFF6F1EB1498E000E8FCA /* Food.json */; };
+		A46A00D11EB66E5E00AE0B18 /* HomeActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A46A00D01EB66E5E00AE0B18 /* HomeActivityTableViewCell.swift */; };
 		A48303611EABF280004A11E3 /* ActivitiesClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48303601EABF280004A11E3 /* ActivitiesClass.swift */; };
 		A48303671EABF3CB004A11E3 /* ActivitiesBase.json in Resources */ = {isa = PBXBuildFile; fileRef = A48303661EABF3CB004A11E3 /* ActivitiesBase.json */; };
 		A483036A1EABF429004A11E3 /* AddActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48303691EABF429004A11E3 /* AddActivityTableViewController.swift */; };
@@ -78,6 +79,7 @@
 		A44CFF621EB0EE5E000E8FCA /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = "../../CalendarPopUp-master/CalendarPopUp/Extensions.swift"; sourceTree = "<group>"; };
 		A44CFF6D1EB14970000E8FCA /* FoodClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodClass.swift; sourceTree = "<group>"; };
 		A44CFF6F1EB1498E000E8FCA /* Food.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Food.json; sourceTree = "<group>"; };
+		A46A00D01EB66E5E00AE0B18 /* HomeActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeActivityTableViewCell.swift; sourceTree = "<group>"; };
 		A48303601EABF280004A11E3 /* ActivitiesClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesClass.swift; sourceTree = "<group>"; };
 		A48303661EABF3CB004A11E3 /* ActivitiesBase.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ActivitiesBase.json; sourceTree = "<group>"; };
 		A48303691EABF429004A11E3 /* AddActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddActivityTableViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				A4062B721EABEED3008E2C77 /* AppDelegate.swift */,
 				A44CFF5A1EB0EE5E000E8FCA /* ViewController.swift */,
 				A4062B761EABEED3008E2C77 /* Main.storyboard */,
+				A46A00D01EB66E5E00AE0B18 /* HomeActivityTableViewCell.swift */,
 				A416F15C1EB39EAA00F784C0 /* User */,
 				A408AFFD1EB20210001D5130 /* Food */,
 				A4F2B8191EACF69E0018D852 /* Activity */,
@@ -349,6 +352,7 @@
 				A40DF26A1EB1EEE400754585 /* AddFoodTableViewController.swift in Sources */,
 				A44CFF6E1EB14970000E8FCA /* FoodClass.swift in Sources */,
 				A44CFF661EB0EE5E000E8FCA /* CalendarPopUp.swift in Sources */,
+				A46A00D11EB66E5E00AE0B18 /* HomeActivityTableViewCell.swift in Sources */,
 				A44CFF641EB0EE5E000E8FCA /* ViewController.swift in Sources */,
 				A416F15B1EB39E8300F784C0 /* StartProfileTableViewController.swift in Sources */,
 				A408AFFA1EB1FEA6001D5130 /* CreateMealTableViewController.swift in Sources */,

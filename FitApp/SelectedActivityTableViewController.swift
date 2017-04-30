@@ -18,13 +18,20 @@ class SelectedActivityTableViewController: UITableViewController, UITextFieldDel
     
     @IBOutlet weak var FinalCalories: UILabel!
     
+    var calories: RealmInt = RealmInt(value: 0)
+    
+
+    
+    let dateFormatter = setDateFormatter()
+    
+    
     @IBAction func AddActivityToDailyBase(_ sender: UIButton)
     {
-        let today: String? = String(describing: Date())
         if let realm = try? Realm(),
-        let todayData = realm.object(ofType: DailyData.self, forPrimaryKey: today as AnyObject) {
+        let todayData = realm.object(ofType: DailyData.self, forPrimaryKey: dateFormatter.string(from: (Date() as Date)) as AnyObject) {
             try! realm.write {
                 todayData.activity.append(detailActivity!)
+                todayData.foodCalories.append(calories)
             }
         }
     }
@@ -52,7 +59,9 @@ class SelectedActivityTableViewController: UITableViewController, UITextFieldDel
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        return true;
+        calories = RealmInt(value: Int(textField.text!)! * Int(CaloriesPerHour.text!)! / 60)
+        FinalCalories.text = String(describing: calories.intValue)
+        return true
     }
     
     //textfield func for the touch on BG
