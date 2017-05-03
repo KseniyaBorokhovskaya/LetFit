@@ -26,6 +26,13 @@
 		A44CFF701EB1498E000E8FCA /* Food.json in Resources */ = {isa = PBXBuildFile; fileRef = A44CFF6F1EB1498E000E8FCA /* Food.json */; };
 		A48303671EABF3CB004A11E3 /* ActivitiesBase.json in Resources */ = {isa = PBXBuildFile; fileRef = A48303661EABF3CB004A11E3 /* ActivitiesBase.json */; };
 		A483036A1EABF429004A11E3 /* AddActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48303691EABF429004A11E3 /* AddActivityTableViewController.swift */; };
+		ED004D461EBA803100A331DB /* UserProfileClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED004D441EBA803100A331DB /* UserProfileClass.swift */; };
+		ED004D471EBA803100A331DB /* UserProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED004D451EBA803100A331DB /* UserProfileTableViewController.swift */; };
+		ED004D4E1EBA807200A331DB /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED004D491EBA807200A331DB /* FoodTableViewCell.swift */; };
+		ED004D4F1EBA807200A331DB /* HomeActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED004D4A1EBA807200A331DB /* HomeActivityTableViewCell.swift */; };
+		ED004D501EBA807200A331DB /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED004D4B1EBA807200A331DB /* ResultsTableViewController.swift */; };
+		ED004D511EBA807200A331DB /* StartProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED004D4C1EBA807200A331DB /* StartProfileTableViewController.swift */; };
+		ED004D521EBA807200A331DB /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED004D4D1EBA807200A331DB /* StartScreenViewController.swift */; };
 		ED1EC36D1EBA778000BE2158 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1EC36C1EBA778000BE2158 /* ViewController.swift */; };
 		ED1EC36F1EBA77AC00BE2158 /* ActivitiesClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1EC36E1EBA77AC00BE2158 /* ActivitiesClass.swift */; };
 		ED1EC3761EBA77C600BE2158 /* CalendarPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1EC3701EBA77C600BE2158 /* CalendarPopUp.swift */; };
@@ -61,6 +68,13 @@
 		A44CFF6F1EB1498E000E8FCA /* Food.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Food.json; sourceTree = "<group>"; };
 		A48303661EABF3CB004A11E3 /* ActivitiesBase.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ActivitiesBase.json; sourceTree = "<group>"; };
 		A48303691EABF429004A11E3 /* AddActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddActivityTableViewController.swift; sourceTree = "<group>"; };
+		ED004D441EBA803100A331DB /* UserProfileClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileClass.swift; sourceTree = "<group>"; };
+		ED004D451EBA803100A331DB /* UserProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileTableViewController.swift; sourceTree = "<group>"; };
+		ED004D491EBA807200A331DB /* FoodTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
+		ED004D4A1EBA807200A331DB /* HomeActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeActivityTableViewCell.swift; sourceTree = "<group>"; };
+		ED004D4B1EBA807200A331DB /* ResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
+		ED004D4C1EBA807200A331DB /* StartProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartProfileTableViewController.swift; sourceTree = "<group>"; };
+		ED004D4D1EBA807200A331DB /* StartScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		ED1EC36C1EBA778000BE2158 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ED1EC36E1EBA77AC00BE2158 /* ActivitiesClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivitiesClass.swift; sourceTree = "<group>"; };
 		ED1EC3701EBA77C600BE2158 /* CalendarPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarPopUp.swift; path = Calendar/CalendarPopUp.swift; sourceTree = "<group>"; };
@@ -114,13 +128,12 @@
 		A4062B711EABEED3008E2C77 /* FitApp */ = {
 			isa = PBXGroup;
 			children = (
-				A408B0021EB23CF9001D5130 /* RealmClassForStofingDailyData.swift */,
+				ED004D531EBA80AE00A331DB /* UI */,
 				A4062B721EABEED3008E2C77 /* AppDelegate.swift */,
-				ED1EC36C1EBA778000BE2158 /* ViewController.swift */,
-				A4062B761EABEED3008E2C77 /* Main.storyboard */,
 				A408AFFD1EB20210001D5130 /* Food */,
 				A4F2B8191EACF69E0018D852 /* Activity */,
 				A44CFF6C1EB0EEC4000E8FCA /* Calendar */,
+				ED004D481EBA804E00A331DB /* Storage */,
 				A48303681EABF3E6004A11E3 /* Supporting Files */,
 			);
 			path = FitApp;
@@ -184,6 +197,30 @@
 				86B0239018E8BCCD4F031F37 /* Pods_FitApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED004D481EBA804E00A331DB /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				ED004D441EBA803100A331DB /* UserProfileClass.swift */,
+				ED004D451EBA803100A331DB /* UserProfileTableViewController.swift */,
+				A408B0021EB23CF9001D5130 /* RealmClassForStofingDailyData.swift */,
+			);
+			name = Storage;
+			sourceTree = "<group>";
+		};
+		ED004D531EBA80AE00A331DB /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				ED004D491EBA807200A331DB /* FoodTableViewCell.swift */,
+				ED004D4A1EBA807200A331DB /* HomeActivityTableViewCell.swift */,
+				ED004D4B1EBA807200A331DB /* ResultsTableViewController.swift */,
+				ED004D4C1EBA807200A331DB /* StartProfileTableViewController.swift */,
+				ED004D4D1EBA807200A331DB /* StartScreenViewController.swift */,
+				ED1EC36C1EBA778000BE2158 /* ViewController.swift */,
+				A4062B761EABEED3008E2C77 /* Main.storyboard */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED004D501EBA807200A331DB /* ResultsTableViewController.swift in Sources */,
 				ED1EC3761EBA77C600BE2158 /* CalendarPopUp.swift in Sources */,
 				A4062B731EABEED3008E2C77 /* AppDelegate.swift in Sources */,
 				A483036A1EABF429004A11E3 /* AddActivityTableViewController.swift in Sources */,
@@ -321,13 +359,19 @@
 				ED1EC37D1EBA77F000BE2158 /* AnimationClass.swift in Sources */,
 				A40DF26A1EB1EEE400754585 /* AddFoodTableViewController.swift in Sources */,
 				A44CFF6E1EB14970000E8FCA /* FoodClass.swift in Sources */,
+				ED004D461EBA803100A331DB /* UserProfileClass.swift in Sources */,
 				ED1EC36F1EBA77AC00BE2158 /* ActivitiesClass.swift in Sources */,
 				ED1EC37A1EBA77C600BE2158 /* Extensions.swift in Sources */,
+				ED004D521EBA807200A331DB /* StartScreenViewController.swift in Sources */,
+				ED004D4F1EBA807200A331DB /* HomeActivityTableViewCell.swift in Sources */,
 				ED1EC37B1EBA77C600BE2158 /* PopupContainer.swift in Sources */,
+				ED004D4E1EBA807200A331DB /* FoodTableViewCell.swift in Sources */,
+				ED004D511EBA807200A331DB /* StartProfileTableViewController.swift in Sources */,
 				A408AFFA1EB1FEA6001D5130 /* CreateMealTableViewController.swift in Sources */,
 				A408AFF81EB1FE6C001D5130 /* SelectedActivityTableViewController.swift in Sources */,
 				ED1EC36D1EBA778000BE2158 /* ViewController.swift in Sources */,
 				A408B0031EB23CF9001D5130 /* RealmClassForStofingDailyData.swift in Sources */,
+				ED004D471EBA803100A331DB /* UserProfileTableViewController.swift in Sources */,
 				A408AFFC1EB1FF13001D5130 /* SelectedFoodTableViewController.swift in Sources */,
 				A425E91E1EACC9D30067DAE4 /* ActivityTableViewCell.swift in Sources */,
 				A425E91C1EACC0CB0067DAE4 /* CreateActivityTableViewController.swift in Sources */,
