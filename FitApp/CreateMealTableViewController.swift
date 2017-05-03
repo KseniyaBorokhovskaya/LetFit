@@ -7,9 +7,40 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CreateMealTableViewController: UITableViewController {
+    
+    @IBOutlet weak var nameOfMeal: UITextField!
+    @IBOutlet weak var calories: UITextField!
+    @IBOutlet weak var carbs: UITextField!
+    @IBOutlet weak var fat: UITextField!
+    @IBOutlet weak var protein: UITextField!
 
+    @IBAction func Create(_ sender: UIButton) {
+        let realm = try! Realm()
+        let food = Food()
+        
+        if let nameOfNewMeal: String = nameOfMeal.text,
+            let amountOfCalories: Int = Int(calories.text!),
+                let amountOfFat: Double = Double(fat.text!),
+                    let amountOfCarbs: Double = Double(carbs.text!),
+                        let amountOfProtein: Double = Double(protein.text!)
+        {
+                food.nameOfFood = nameOfNewMeal
+                food.calories = amountOfCalories
+                food.carbohydrates = amountOfCarbs
+                food.fat = amountOfFat
+                food.protein = amountOfProtein
+                try! realm.write
+                    {
+                        realm.add(food)
+                }
+        }
+
+        navigationController!.popViewController(animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,15 +58,6 @@ class CreateMealTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

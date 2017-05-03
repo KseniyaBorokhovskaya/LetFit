@@ -22,7 +22,6 @@ class PreloadFoodData
                 do {
                     let clearJSONFood = JSON(data: data as Data, options: JSONSerialization.ReadingOptions.mutableContainers, error: nil)
                     let numberOfFood = clearJSONFood["Food"].count
-                    
                     for i in 0..<numberOfFood{
                         let food = Food()
                         food.nameOfFood = clearJSONFood["Food","\(i + 1)", "nameOfFood"].stringValue

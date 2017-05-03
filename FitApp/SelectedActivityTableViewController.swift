@@ -7,18 +7,71 @@
 //
 
 import UIKit
+import RealmSwift
 
-class SelectedActivityTableViewController: UITableViewController {
+class SelectedActivityTableViewController: UITableViewController, UITextFieldDelegate{
 
+    @IBOutlet weak var ActivityName: UILabel!
+    @IBOutlet weak var CaloriesPerHour: UILabel!
+    
+    @IBOutlet weak var minutes: UITextField!
+    
+    @IBOutlet weak var FinalCalories: UILabel!
+    
+    var calories: RealmInt = RealmInt(value: 0)
+    
+
+    
+    let dateFormatter = setDateFormatter()
+    
+    
+    @IBAction func AddActivityToDailyBase(_ sender: UIButton)
+    {
+        if let realm = try? Realm(),
+        let todayData = realm.object(ofType: DailyData.self, forPrimaryKey: dateFormatter.string(from: (Date() as Date)) as AnyObject) {
+            try! realm.write {
+                todayData.activity.append(detailActivity!)
+                todayData.activityCalories.append(calories)
+                todayData.burnedCalories = todayData.burnedCalories + calories.intValue
+            }
+        }
+    }
+    var detailActivity: Activity? {
+        didSet {
+            configureView()
+        }
+    }
+    
+    func configureView() {
+        if let detailActivity = detailActivity {
+            if let ActivityName = ActivityName, let CaloriesPerHour = CaloriesPerHour {
+                ActivityName.text = detailActivity.nameOfActivity
+                CaloriesPerHour.text = String(detailActivity.calories)
+                title = detailActivity.nameOfActivity
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        configureView()
+        minutes.delegate = self
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        calories = RealmInt(value: Int(textField.text!)! * Int(CaloriesPerHour.text!)! / 60)
+        FinalCalories.text = String(describing: calories.intValue)
+        return true
+    }
+    
+
+    
+    //textfield func for the touch on BG
+//    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+//        minutes.resignFirstResponder()
+//        self.view.endEditing(true)
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

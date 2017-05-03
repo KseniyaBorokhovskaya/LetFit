@@ -7,17 +7,84 @@
 //
 
 import UIKit
+import RealmSwift
 
-class SelectedFoodTableViewController: UITableViewController {
+class SelectedFoodTableViewController: UITableViewController, UITextFieldDelegate{
 
+    @IBOutlet weak var servingSize: UITextField!
+    @IBOutlet weak var numberOfServings: UITextField!
+    
+    @IBOutlet weak var mealName: UILabel!
+    @IBOutlet weak var caloriesPer100g: UILabel!
+    @IBOutlet weak var finalCalories: UILabel!
+    @IBOutlet weak var finalCarbs: UILabel!
+    @IBOutlet weak var finalFat: UILabel!
+    @IBOutlet weak var finalProtein: UILabel!
+    
+    var calories: RealmInt = RealmInt(value: 0)
+    var carbs: RealmInt = RealmInt(value: 0)
+    var fat: RealmInt = RealmInt(value: 0)
+    var protein: RealmInt = RealmInt(value: 0)
+    
+    
+    let dateFormatter = setDateFormatter()
+    
+    @IBAction func AddFoodTodailyBase(_ sender: UIButton) {
+        if let realm = try? Realm(),
+            let todayData = realm.object(ofType: DailyData.self, forPrimaryKey: dateFormatter.string(from: (Date() as Date)) as AnyObject) {
+            try! realm.write {
+                todayData.food.append(detailFood!)
+                todayData.foodCalories.append(calories)
+                todayData.carbs.append(carbs)
+                todayData.fat.append(fat)
+                todayData.protein.append(protein)
+                todayData.eatenCalories = todayData.eatenCalories + calories.intValue
+                todayData.leftFat = todayData.leftFat - Double(fat.intValue)
+                todayData.leftCarbs = todayData.leftCarbs - Double(carbs.intValue)
+                todayData.leftProtein = todayData.leftProtein - Double(protein.intValue)
+            }
+        }
+    }
+    
+    var detailFood: Food? {
+        didSet {
+            configureView()
+        }
+    }
+    
+    func configureView() {
+        if let detailFood = detailFood {
+            if let mealName = mealName, let caloriesPer100g = caloriesPer100g {
+                mealName.text = detailFood.nameOfFood
+                caloriesPer100g.text = String(detailFood.calories)
+                title = detailFood.nameOfFood
+            }
+        }
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        configureView()
+        numberOfServings.delegate = self
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        calories = RealmInt(value: Int(textField.text!)! * Int(servingSize.text!)! * Int(caloriesPer100g.text!)! / 100)
+        finalCalories.text = String(describing: calories.intValue)
+        carbs = RealmInt(value: Int(textField.text!)! * Int(servingSize.text!)! * Int((detailFood?.carbohydrates)!) / 100)
+        finalCarbs.text = String(describing: carbs.intValue)
+        fat = RealmInt(value: Int(textField.text!)! * Int(servingSize.text!)! * Int((detailFood?.fat)!) / 100)
+        finalFat.text = String(describing: fat.intValue)
+        protein = RealmInt(value: Int(textField.text!)! * Int(servingSize.text!)! * Int((detailFood?.protein)!) / 100)
+        finalProtein.text = String(describing: protein.intValue)
+        return true
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,15 +94,6 @@ class SelectedFoodTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

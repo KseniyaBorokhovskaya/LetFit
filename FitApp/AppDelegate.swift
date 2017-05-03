@@ -7,25 +7,46 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-//        let defaults = UserDefaults.standard
-//        if defaults.object(forKey: "isFirstTime") == nil {
-//            defaults.set("No", forKey:"isFirstTime")
-//            defaults.synchronize()
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil) //Write your storyboard name
-//            let viewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-//            self.window?.rootViewController = viewController
-//            self.window?.makeKeyAndVisible()
-//        }
-//        PreloadData.getJSONActivitiesData()
-        // Override point for customization after application launch.
+        ////UISearchBar.appearance().barTintColor = UIColor.white
+       // UISearchBar.appearance().tintColor = UIColor.lightGray
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let defaults = UserDefaults.standard
+        if defaults.object(forKey: "isFirstTime") == nil {
+            PreloadData.getJSONActivitiesData()
+            PreloadFoodData.getJSONAFoodData()
+            defaults.set("No", forKey:"isFirstTime")
+            defaults.synchronize()
+             //Write your storyboard name
+            let viewController = storyboard.instantiateViewController(withIdentifier: "StartScreenViewController")
+            self.window?.rootViewController = viewController
+            self.window?.makeKeyAndVisible()
+        }
+            let tabViewController = storyboard.instantiateViewController(withIdentifier: "TabBarViewController") as? UITabBarController
+            tabViewController?.selectedIndex = 1
+        
+        let dateFormatter = setDateFormatter()
+        let currentDate = Date()
+        let today: String? = dateFormatter.string(from:currentDate as Date)
+        if let realm = try? Realm(),
+            let _ = realm.object(ofType: DailyData.self, forPrimaryKey: today as AnyObject) {
+
+        } else {
+            let realm = try! Realm()
+            let todayData = DailyData()
+            try! realm.write
+            {
+                    realm.add(todayData)
+            }
+        }
+        
         return true
     }
 

@@ -1,0 +1,23 @@
+PODS:
+  - JTAppleCalendar (6.0.0)
+  - Realm (2.6.2):
+    - Realm/Headers (= 2.6.2)
+  - Realm/Headers (2.6.2)
+  - RealmSwift (2.6.2):
+    - Realm (= 2.6.2)
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - JTAppleCalendar (= 6.0)
+  - RealmSwift (~> 2.6.2)
+  - SwiftyJSON (~> 3.0)
+
+SPEC CHECKSUMS:
+  JTAppleCalendar: 374d7d6309b4c40a41be4167fe4cc3b935831da1
+  Realm: 29222766425b9f831228f81b63f0e38a97a4d700
+  RealmSwift: d161a80f96cb91ae88391a7d5a9cf08024a7bc8e
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: 592c76ec8fb8c04aea48490f46ed8965094993be
+
+COCOAPODS: 1.2.0
